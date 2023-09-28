@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       },
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'SwapWing',
+        title: 'SwapWing2',
         theme: theme(),
         home: MyHomePage(),
       ),
