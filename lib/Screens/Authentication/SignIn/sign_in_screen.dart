@@ -15,13 +15,14 @@ import '../SignUp/sign_up_screen.dart';
 
 Future<SignInModel> loginUser(String email, String password) async {
   final response = await http.post(
-    Uri.parse(hostName + '/api/accounts/login-user'),
+    Uri.parse(hostName + '/api/accounts/login-user/'),
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     },
     body: jsonEncode(<String, String>{
       'email': email,
       'password': password,
+      'fcm_token': 'dgdggfdgdfgdfgdgdg'
     }),
   );
 
@@ -455,7 +456,8 @@ class _SignInScreenState extends State<SignInScreen> {
 
           else if (data.message == "Error") {
             String? errorKey = snapshot.data!.errors!.keys.firstWhere(
-                  (key) => key == "password" || key == "email",
+                  (key) => key == "password" || key == "email" || key == "fcm_token",
+              // ignore: null_check_always_fails
               orElse: () => null!,
             );
             if (errorKey != null) {

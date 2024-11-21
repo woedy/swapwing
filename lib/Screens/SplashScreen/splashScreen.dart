@@ -3,8 +3,6 @@ import 'package:samahat_barter/Screens/Authentication/SignIn/sign_in_screen.dart
 import 'dart:async';
 
 
-import '../../constants.dart';
-import '../OnboardingScreens/onboarding_screen.dart';
 
 
 class SplashScreen extends StatefulWidget {

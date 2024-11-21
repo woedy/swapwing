@@ -115,7 +115,7 @@ class _HomePageState extends State<HomePage> {
       await _initializeVideo(videoFile);
       String? trimmedVideoPath = await Navigator.of(context).push(
         MaterialPageRoute(builder: (context) {
-          return TrimmerView(file: videoFile);
+          return TrimmerView(file: videoFile!);
         }),
       );
 

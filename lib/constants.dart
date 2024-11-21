@@ -14,8 +14,8 @@ const barterPrimary2 = Color(0xff08bf98);
 const bodyText1 = Color(0xffffffff);
 const bodyText2 = Color(0xffffffff);
 
-const hostNameLOCAL = "http://192.168.43.220:8000";
-const socketHostNameLOCAL = "ws://192.168.43.220:8000";
+//const hostName = "http://192.168.43.121:8000";
+//const socketHostName = "ws://192.168.43.121:8000";
 
 
 const googleAPiKey = "AIzaSyC3GI3QkJxwxDesAvuQXAdFhQtExmAlcg4";
@@ -23,8 +23,8 @@ const googleAPiKey = "AIzaSyC3GI3QkJxwxDesAvuQXAdFhQtExmAlcg4";
 
 
 
-const hostName = "http://35.239.116.36";
-const socketHostName = "ws://35.239.116.36";
+const hostName = "http://92.112.194.239:82";
+const socketHostName = "ws://92.112.194.239:82";
 
 
 

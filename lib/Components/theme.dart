@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:samahat_barter/constants.dart';
 
 ThemeData theme() {
@@ -13,8 +14,8 @@ ThemeData theme() {
 
 TextTheme textTheme() {
   return TextTheme(
-    bodyText1: TextStyle(color: bodyText1),
-    bodyText2: TextStyle(color: bodyText2),
+    bodyLarge: TextStyle(color: bodyText1),
+    bodyMedium: TextStyle(color: bodyText2),
   );
 }
 
@@ -22,10 +23,12 @@ AppBarTheme appBarTheme() {
   return AppBarTheme(
       color: barterPrimary,
       elevation: 0,
-      brightness: Brightness.dark,
       iconTheme: IconThemeData(color: Colors.white),
-      textTheme: TextTheme(
-          headline6: TextStyle(color: Colors.white, fontSize: 12)
-      )
+/*       textTheme: TextTheme(
+          titleLarge: TextStyle(color: Colors.white, fontSize: 12)
+      ), 
+       */
+      
+      systemOverlayStyle: SystemUiOverlayStyle.light
   );
 }

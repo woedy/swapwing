@@ -640,7 +640,7 @@ class _SwapWingRegistrationState extends State<SwapWingRegistration> {
 
 
       final response = await http.post(
-        Uri.parse(hostName + '/api/accounts/check-email-exist'),
+        Uri.parse(hostName + '/api/accounts/check-email-exist/'),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },
@@ -1085,7 +1085,7 @@ class _SwapWingRegistrationState extends State<SwapWingRegistration> {
 
 
       final response = await http.post(
-        Uri.parse(hostName + '/api/accounts/check-username-exist'),
+        Uri.parse(hostName + '/api/accounts/check-username-exist/'),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },
@@ -2088,7 +2088,7 @@ class _SwapWingRegistrationState extends State<SwapWingRegistration> {
 
 
       final response = await http.post(
-        Uri.parse(hostName + '/api/accounts/register-user'),
+        Uri.parse(hostName + '/api/accounts/register-user/'),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },
@@ -2328,7 +2328,7 @@ class _SwapWingRegistrationState extends State<SwapWingRegistration> {
 
 
       final response = await http.post(
-        Uri.parse(hostName + '/api/accounts/verify-user-email'),
+        Uri.parse(hostName + '/api/accounts/verify-user-email/'),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },

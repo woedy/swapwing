@@ -27,7 +27,6 @@ class _ItemAddedSuccessfulPageState extends State<ItemAddedSuccessfulPage> {
       appBar: AppBar(
         title: Text("Successful"),
         backgroundColor: barterPrimary,
-        backwardsCompatibility: false,
         automaticallyImplyLeading: false,
       ),
       body: Container(

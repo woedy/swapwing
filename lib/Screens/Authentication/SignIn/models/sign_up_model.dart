@@ -12,6 +12,7 @@ class SignInModel {
       errors: json['errors'] != null ? _parseErrors(json['errors']) : null,
     );
   }
+
   static Map<String, List<String>> _parseErrors(Map<String, dynamic> errorData) {
     Map<String, List<String>> errors = {};
     errorData.forEach((key, value) {
@@ -24,46 +25,23 @@ class SignInModel {
     return errors;
   }
 }
+
 class SignInData {
-  String? userId;
-  String? email;
+  String? token;
   String? firstName;
   String? lastName;
-  String? token;
+  String? email;
+  String? emailVerifiedAt;
 
-  SignInData({this.userId, this.email, this.firstName, this.lastName, this.token});
+  SignInData({this.token, this.firstName, this.lastName, this.email, this.emailVerifiedAt});
 
-  SignInData.fromJson(Map<String, dynamic> json) {
-    userId = json['user_id'];
-    email = json['email'];
-    firstName = json['first_name'];
-    lastName = json['last_name'];
-    token = json['token'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['user_id'] = this.userId;
-    data['email'] = this.email;
-    data['first_name'] = this.firstName;
-    data['last_name'] = this.lastName;
-    data['token'] = this.token;
-    return data;
-  }
-}
-
-class Errors {
-  List<String>? email;
-
-  Errors({this.email});
-
-  Errors.fromJson(Map<String, dynamic> json) {
-    email = json['email'].cast<String>();
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['email'] = this.email;
-    return data;
+  factory SignInData.fromJson(Map<String, dynamic> json) {
+    return SignInData(
+      token: json['token'],
+      firstName: json['first_name'],
+      lastName: json['last_name'],
+      email: json['email'],
+      emailVerifiedAt: json['email_verified_at'],
+    );
   }
 }

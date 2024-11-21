@@ -126,7 +126,7 @@ class _SignUpScreen2State extends State<SignUpScreen2> {
                                               },
                                               child: Icon(Icons.delete_forever, color: Colors.white,),
                                               style: ElevatedButton.styleFrom(
-                                                primary: Colors.red,
+                                                backgroundColor: Colors.red,
 
                                                 shape: CircleBorder(
 

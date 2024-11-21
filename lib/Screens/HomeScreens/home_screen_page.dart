@@ -90,7 +90,7 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
     _controller = AnimationController(
       vsync: this,
       lowerBound: 0.5,
-      duration: Duration(seconds: 3),
+      duration: const Duration(seconds: 3),
     )..repeat();
   }
 
@@ -116,7 +116,7 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
       future: _futureHome,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Dialog(
+          return const Dialog(
               backgroundColor: Colors.transparent,
               child: PopOutCard(subject: 'Connecting..', message: "Please wait..", icon: Icons.downloading,)
 
@@ -167,11 +167,11 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
 
                                           child: Container(
 
-                                            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+                                            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
                                             decoration: BoxDecoration(
                                                 borderRadius: BorderRadius.circular(30),
                                                 //color: barterPrimary2,
-                                                gradient: LinearGradient(
+                                                gradient: const LinearGradient(
                                                   begin: Alignment.topCenter,
                                                   end: Alignment.bottomCenter,
                                                   colors: [
@@ -184,7 +184,7 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                               children: [
                                                 InkWell(
                                                   onTap: (){
-                                                    Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => UserProfile()));
+                                                    Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => const UserProfile()));
                                                   },
 
                                                   child: CircleAvatar(
@@ -192,18 +192,18 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                     backgroundImage: NetworkImage(hostName + user_data!.profilePhoto!.toString()),
                                                   ),
                                                 ),
-                                                SizedBox(
+                                                const SizedBox(
                                                   width: 20,
                                                 ),
                                                 Column(
                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                   mainAxisAlignment: MainAxisAlignment.center,
                                                   children: [
-                                                    Text("Let's Keep Trading!", style: TextStyle(fontSize: 16, ),),
-                                                    Text("Hi, " + user_data.firstName!.toString(), style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),),
+                                                    const Text("Let's Keep Trading!", style: TextStyle(fontSize: 16, ),),
+                                                    Text("Hi, " + user_data.firstName!.toString(), style: const TextStyle(fontSize: 25, fontWeight: FontWeight.w600),),
                                                   ],
                                                 ),
-                                                SizedBox(
+                                                const SizedBox(
                                                   width: 20,
                                                 ),
                                               ],
@@ -211,18 +211,18 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
 
                                           ),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 10,
                                         ),
                                         InkWell(
                                           onTap: (){
-                                            Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => NotificationPage()));
+                                            Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => const NotificationPage()));
                                           },
                                           child: Container(
                                             height: 50,
                                             width: 50,
                                             decoration: BoxDecoration(
-                                                gradient: LinearGradient(
+                                                gradient: const LinearGradient(
                                                   begin: Alignment.topCenter,
                                                   end: Alignment.bottomCenter,
                                                   colors: [
@@ -235,9 +235,9 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                             child: Center(
                                               child: Stack(
                                                 children: [
-                                                  Icon(Icons.notifications_active, color: Colors.white,),
+                                                  const Icon(Icons.notifications_active, color: Colors.white,),
                                                   if(data.data!.hasNotification == true)...[
-                                                    CircleAvatar(
+                                                    const CircleAvatar(
                                                       radius: 5,
                                                       backgroundColor: Colors.red,
                                                     )
@@ -255,18 +255,18 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                     flex: 3,
                                     child: Column(
                                       children: [
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 10,
                                         ),
                                         Container(
-                                          padding: EdgeInsets.all(10),
-                                          margin: EdgeInsets.symmetric(horizontal: 10),
+                                          padding: const EdgeInsets.all(10),
+                                          margin: const EdgeInsets.symmetric(horizontal: 10),
                                           decoration: BoxDecoration(
                                               borderRadius: BorderRadius.circular(5),
                                               border: Border.all(
                                                   color: Colors.white.withOpacity(0.1))),
 
-                                          child: Row(
+                                          child: const Row(
                                             crossAxisAlignment: CrossAxisAlignment.center,
                                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                             children: [
@@ -299,7 +299,7 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                                   width: 500,
 
 
-                                                                  margin: EdgeInsets.symmetric(horizontal: 10, vertical: 30),
+                                                                  margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 30),
                                                                   decoration: BoxDecoration(
                                                                       borderRadius: BorderRadius.circular(10),
                                                                       //color: Colors.red,
@@ -321,10 +321,10 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                                 width: 500,
                                                                 height: 63,
 
-                                                                margin: EdgeInsets.symmetric(horizontal: 10, ),
+                                                                margin: const EdgeInsets.symmetric(horizontal: 10, ),
                                                                 decoration: BoxDecoration(
                                                                   color: barterPrimary2.withOpacity(0.7),
-                                                                  borderRadius: BorderRadius.only(
+                                                                  borderRadius: const BorderRadius.only(
                                                                     topLeft: Radius.circular(10.0),
                                                                     topRight: Radius.circular(10.0),
                                                                   ),
@@ -334,20 +334,20 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                                   //mainAxisSize: MainAxisSize.max,
                                                                   children: [
                                                                     Container(
-                                                                      margin: EdgeInsets.all(10),
+                                                                      margin: const EdgeInsets.all(10),
                                                                       child: Column(
                                                                         crossAxisAlignment: CrossAxisAlignment.start,
                                                                         children: [
-                                                                          Text("Trending #" + data.data!.allEpisodes![index].trendingNo!.toString(), style: TextStyle(fontWeight: FontWeight.w800, color: barterPrimary),),
-                                                                          SizedBox(
+                                                                          Text("Trending #" + data.data!.allEpisodes![index].trendingNo!.toString(), style: const TextStyle(fontWeight: FontWeight.w800, color: barterPrimary),),
+                                                                          const SizedBox(
                                                                             height: 5,
                                                                           ),
-                                                                          Text(data.data!.allEpisodes![index].title!.toString(), style: TextStyle(fontWeight: FontWeight.w800, fontSize: 16),),
+                                                                          Text(data.data!.allEpisodes![index].title!.toString(), style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 16),),
                                                                         ],
                                                                       ),
                                                                     ),
                                                                     Container(
-                                                                      margin: EdgeInsets.all(10),
+                                                                      margin: const EdgeInsets.all(10),
                                                                       //padding: EdgeInsets.all(2),
                                                                       width: 80,
                                                                       height: 25,
@@ -355,7 +355,7 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                                           color: barterPrimary,
                                                                           borderRadius: BorderRadius.circular(40)
                                                                       ),
-                                                                      child: Center(
+                                                                      child: const Center(
                                                                         child: Text("Watch",style: TextStyle(fontSize: 12),),
                                                                       ),
                                                                     )
@@ -371,10 +371,10 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                               child: Container(
                                                                 //width: 300,
                                                                 height: 50,
-                                                                margin: EdgeInsets.symmetric(horizontal: 10, ),
+                                                                margin: const EdgeInsets.symmetric(horizontal: 10, ),
                                                                 decoration: BoxDecoration(
                                                                   color: barterPrimary2.withOpacity(0.7),
-                                                                  borderRadius: BorderRadius.only(
+                                                                  borderRadius: const BorderRadius.only(
                                                                     bottomLeft: Radius.circular(10.0),
                                                                     bottomRight: Radius.circular(10.0),
                                                                   ),
@@ -382,11 +382,11 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                                 child: Row(
                                                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                   children: [
-                                                                    SizedBox(
+                                                                    const SizedBox(
                                                                       width: 5,
                                                                     ),
                                                                     Container(
-                                                                      padding: EdgeInsets.all(5),
+                                                                      padding: const EdgeInsets.all(5),
                                                                       width: 60,
                                                                       height: 35,
                                                                       decoration: BoxDecoration(
@@ -396,19 +396,19 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                                       child: Row(
                                                                         mainAxisAlignment: MainAxisAlignment.center,
                                                                         children: [
-                                                                          Icon(Icons.thumb_up_off_alt_outlined, size: 15, color: Colors.white,),
-                                                                          SizedBox(
+                                                                          const Icon(Icons.thumb_up_off_alt_outlined, size: 15, color: Colors.white,),
+                                                                          const SizedBox(
                                                                             width: 5,
                                                                           ),
-                                                                          Text(data.data!.allEpisodes![index].likes!.length.toString(), style: TextStyle(fontSize: 12),)
+                                                                          Text(data.data!.allEpisodes![index].likes!.length.toString(), style: const TextStyle(fontSize: 12),)
                                                                         ],
                                                                       ),
                                                                     ),
-                                                                    SizedBox(
+                                                                    const SizedBox(
                                                                       width: 5,
                                                                     ),
                                                                     Container(
-                                                                      padding: EdgeInsets.all(5),
+                                                                      padding: const EdgeInsets.all(5),
                                                                       width: 60,
                                                                       height: 35,
                                                                       decoration: BoxDecoration(
@@ -418,19 +418,19 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                                       child: Row(
                                                                         mainAxisAlignment: MainAxisAlignment.center,
                                                                         children: [
-                                                                          Icon(Icons.share_outlined, size: 15, color: Colors.white,),
-                                                                          SizedBox(
+                                                                          const Icon(Icons.share_outlined, size: 15, color: Colors.white,),
+                                                                          const SizedBox(
                                                                             width: 5,
                                                                           ),
-                                                                          Text(data.data!.allEpisodes![index].sharedEpisodes!.length.toString(), style: TextStyle(fontSize: 12),)
+                                                                          Text(data.data!.allEpisodes![index].sharedEpisodes!.length.toString(), style: const TextStyle(fontSize: 12),)
                                                                         ],
                                                                       ),
                                                                     ),
-                                                                    SizedBox(
+                                                                    const SizedBox(
                                                                       width: 5,
                                                                     ),
                                                                     Container(
-                                                                      padding: EdgeInsets.all(5),
+                                                                      padding: const EdgeInsets.all(5),
                                                                       width: 60,
                                                                       height: 35,
                                                                       decoration: BoxDecoration(
@@ -440,15 +440,15 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                                       child: Row(
                                                                         mainAxisAlignment: MainAxisAlignment.center,
                                                                         children: [
-                                                                          Icon(Icons.remove_red_eye_outlined, size: 15, color: Colors.white,),
-                                                                          SizedBox(
+                                                                          const Icon(Icons.remove_red_eye_outlined, size: 15, color: Colors.white,),
+                                                                          const SizedBox(
                                                                             width: 5,
                                                                           ),
-                                                                          Text(data.data!.allEpisodes![index].views!.toString(), style: TextStyle(fontSize: 12),)
+                                                                          Text(data.data!.allEpisodes![index].views!.toString(), style: const TextStyle(fontSize: 12),)
                                                                         ],
                                                                       ),
                                                                     ),
-                                                                    SizedBox(
+                                                                    const SizedBox(
                                                                       width: 5,
                                                                     ),
                                                                   ],
@@ -484,7 +484,7 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                                   width: 300,
 
 
-                                                                  margin: EdgeInsets.symmetric(horizontal: 10, vertical: 30),
+                                                                  margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 30),
                                                                   decoration: BoxDecoration(
                                                                       borderRadius: BorderRadius.circular(10),
                                                                       //color: Colors.red,
@@ -506,10 +506,10 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                                 width: 500,
                                                                 height: 63,
 
-                                                                margin: EdgeInsets.symmetric(horizontal: 10, ),
+                                                                margin: const EdgeInsets.symmetric(horizontal: 10, ),
                                                                 decoration: BoxDecoration(
                                                                   color: barterPrimary2.withOpacity(0.7),
-                                                                  borderRadius: BorderRadius.only(
+                                                                  borderRadius: const BorderRadius.only(
                                                                     topLeft: Radius.circular(10.0),
                                                                     topRight: Radius.circular(10.0),
                                                                   ),
@@ -519,20 +519,20 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                                   //mainAxisSize: MainAxisSize.max,
                                                                   children: [
                                                                     Container(
-                                                                      margin: EdgeInsets.all(10),
+                                                                      margin: const EdgeInsets.all(10),
                                                                       child: Column(
                                                                         crossAxisAlignment: CrossAxisAlignment.start,
                                                                         children: [
-                                                                          Text("Trending #" + data.data!.allEpisodes![index].trendingNo!.toString(), style: TextStyle(fontWeight: FontWeight.w800, color: barterPrimary),),
-                                                                          SizedBox(
+                                                                          Text("Trending #" + data.data!.allEpisodes![index].trendingNo!.toString(), style: const TextStyle(fontWeight: FontWeight.w800, color: barterPrimary),),
+                                                                          const SizedBox(
                                                                             height: 5,
                                                                           ),
-                                                                          Text(data.data!.allEpisodes![index].title!.toString(), style: TextStyle(fontWeight: FontWeight.w800, fontSize: 16),),
+                                                                          Text(data.data!.allEpisodes![index].title!.toString(), style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 16),),
                                                                         ],
                                                                       ),
                                                                     ),
                                                                     Container(
-                                                                      margin: EdgeInsets.all(10),
+                                                                      margin: const EdgeInsets.all(10),
                                                                       //padding: EdgeInsets.all(2),
                                                                       width: 80,
                                                                       height: 25,
@@ -540,7 +540,7 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                                           color: barterPrimary,
                                                                           borderRadius: BorderRadius.circular(40)
                                                                       ),
-                                                                      child: Center(
+                                                                      child: const Center(
                                                                         child: Text("Watch",style: TextStyle(fontSize: 12),),
                                                                       ),
                                                                     )
@@ -556,10 +556,10 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                               child: Container(
                                                                 //width: 300,
                                                                 height: 50,
-                                                                margin: EdgeInsets.symmetric(horizontal: 10, ),
+                                                                margin: const EdgeInsets.symmetric(horizontal: 10, ),
                                                                 decoration: BoxDecoration(
                                                                   color: barterPrimary2.withOpacity(0.7),
-                                                                  borderRadius: BorderRadius.only(
+                                                                  borderRadius: const BorderRadius.only(
                                                                     bottomLeft: Radius.circular(10.0),
                                                                     bottomRight: Radius.circular(10.0),
                                                                   ),
@@ -567,11 +567,11 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                                 child: Row(
                                                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                   children: [
-                                                                    SizedBox(
+                                                                    const SizedBox(
                                                                       width: 5,
                                                                     ),
                                                                     Container(
-                                                                      padding: EdgeInsets.all(5),
+                                                                      padding: const EdgeInsets.all(5),
                                                                       width: 60,
                                                                       height: 35,
                                                                       decoration: BoxDecoration(
@@ -581,19 +581,19 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                                       child: Row(
                                                                         mainAxisAlignment: MainAxisAlignment.center,
                                                                         children: [
-                                                                          Icon(Icons.thumb_up_off_alt_outlined, size: 15, color: Colors.white,),
-                                                                          SizedBox(
+                                                                          const Icon(Icons.thumb_up_off_alt_outlined, size: 15, color: Colors.white,),
+                                                                          const SizedBox(
                                                                             width: 5,
                                                                           ),
-                                                                          Text(data.data!.allEpisodes![index].likes!.length.toString(), style: TextStyle(fontSize: 12),)
+                                                                          Text(data.data!.allEpisodes![index].likes!.length.toString(), style: const TextStyle(fontSize: 12),)
                                                                         ],
                                                                       ),
                                                                     ),
-                                                                    SizedBox(
+                                                                    const SizedBox(
                                                                       width: 5,
                                                                     ),
                                                                     Container(
-                                                                      padding: EdgeInsets.all(5),
+                                                                      padding: const EdgeInsets.all(5),
                                                                       width: 60,
                                                                       height: 35,
                                                                       decoration: BoxDecoration(
@@ -603,19 +603,19 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                                       child: Row(
                                                                         mainAxisAlignment: MainAxisAlignment.center,
                                                                         children: [
-                                                                          Icon(Icons.share_outlined, size: 15, color: Colors.white,),
-                                                                          SizedBox(
+                                                                          const Icon(Icons.share_outlined, size: 15, color: Colors.white,),
+                                                                          const SizedBox(
                                                                             width: 5,
                                                                           ),
-                                                                          Text(data.data!.allEpisodes![index].sharedEpisodes!.length.toString(), style: TextStyle(fontSize: 12),)
+                                                                          Text(data.data!.allEpisodes![index].sharedEpisodes!.length.toString(), style: const TextStyle(fontSize: 12),)
                                                                         ],
                                                                       ),
                                                                     ),
-                                                                    SizedBox(
+                                                                    const SizedBox(
                                                                       width: 5,
                                                                     ),
                                                                     Container(
-                                                                      padding: EdgeInsets.all(5),
+                                                                      padding: const EdgeInsets.all(5),
                                                                       width: 60,
                                                                       height: 35,
                                                                       decoration: BoxDecoration(
@@ -625,15 +625,15 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                                       child: Row(
                                                                         mainAxisAlignment: MainAxisAlignment.center,
                                                                         children: [
-                                                                          Icon(Icons.remove_red_eye_outlined, size: 15, color: Colors.white,),
-                                                                          SizedBox(
+                                                                          const Icon(Icons.remove_red_eye_outlined, size: 15, color: Colors.white,),
+                                                                          const SizedBox(
                                                                             width: 5,
                                                                           ),
-                                                                          Text(data.data!.allEpisodes![index].views!.toString(), style: TextStyle(fontSize: 12),)
+                                                                          Text(data.data!.allEpisodes![index].views!.toString(), style: const TextStyle(fontSize: 12),)
                                                                         ],
                                                                       ),
                                                                     ),
-                                                                    SizedBox(
+                                                                    const SizedBox(
                                                                       width: 5,
                                                                     ),
                                                                   ],
@@ -679,7 +679,7 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                 children: [
                                                   InkWell(
                                                     onTap: (){
-                                                      Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => MyGarage()));
+                                                      Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => const MyGarage()));
 
                                                     },
                                                     child: Column(
@@ -688,7 +688,7 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                           height: 50,
                                                           width: 50,
                                                           decoration: BoxDecoration(
-                                                              gradient: LinearGradient(
+                                                              gradient: const LinearGradient(
                                                                 begin: Alignment.topCenter,
                                                                 end: Alignment.bottomCenter,
                                                                 colors: [
@@ -698,11 +698,11 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                               ),
                                                               borderRadius: BorderRadius.circular(500)
                                                           ),
-                                                          child: Center(
+                                                          child: const Center(
                                                             child: Icon(Icons.home_filled, color: Colors.white,),
                                                           ),
                                                         ),
-                                                        Text("My Garage", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, shadows: [
+                                                        const Text("My Garage", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, shadows: [
                                                           Shadow(
                                                             offset: Offset(1.0, 1.0),
                                                             blurRadius: 3.0,
@@ -714,7 +714,7 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                   )
                                                 ],
                                               ),
-                                              SizedBox(
+                                              const SizedBox(
                                                 height: 10,
                                               ),
                                               Row(
@@ -722,7 +722,7 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                 children: [
                                                   Row(
                                                     children: [
-                                                      SizedBox(
+                                                      const SizedBox(
                                                         width: 30,
                                                       ),
                                                       InkWell(
@@ -736,7 +736,7 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                               height: 50,
                                                               width: 50,
                                                               decoration: BoxDecoration(
-                                                                  gradient: LinearGradient(
+                                                                  gradient: const LinearGradient(
                                                                     begin: Alignment.topCenter,
                                                                     end: Alignment.bottomCenter,
                                                                     colors: [
@@ -746,11 +746,11 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                                   ),
                                                                   borderRadius: BorderRadius.circular(500)
                                                               ),
-                                                              child: Center(
+                                                              child: const Center(
                                                                 child: Icon(Icons.list, color: Colors.white,),
                                                               ),
                                                             ),
-                                                            Text("Listings", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, shadows: [
+                                                            const Text("Listings", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, shadows: [
                                                               Shadow(
                                                                 offset: Offset(1.0, 1.0),
                                                                 blurRadius: 3.0,
@@ -776,7 +776,7 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                               height: 50,
                                                               width: 50,
                                                               decoration: BoxDecoration(
-                                                                  gradient: LinearGradient(
+                                                                  gradient: const LinearGradient(
                                                                     begin: Alignment.topCenter,
                                                                     end: Alignment.bottomCenter,
                                                                     colors: [
@@ -786,11 +786,11 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                                   ),
                                                                   borderRadius: BorderRadius.circular(500)
                                                               ),
-                                                              child: Center(
+                                                              child: const Center(
                                                                 child: Icon(Icons.list_alt, color: Colors.white,),
                                                               ),
                                                             ),
-                                                            Text("My Trades", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, shadows: [
+                                                            const Text("My Trades", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, shadows: [
                                                               Shadow(
                                                                 offset: Offset(1.0, 1.0),
                                                                 blurRadius: 3.0,
@@ -800,7 +800,7 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                           ],
                                                         ),
                                                       ),
-                                                      SizedBox(
+                                                      const SizedBox(
                                                         width: 30,
                                                       ),
                                                     ],
@@ -809,7 +809,7 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
 
                                                 ],
                                               ),
-                                              SizedBox(
+                                              const SizedBox(
                                                 height: 40,
                                               ),
                                               Row(
@@ -817,12 +817,12 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                 children: [
                                                   Row(
                                                     children: [
-                                                      SizedBox(
+                                                      const SizedBox(
                                                         width: 30,
                                                       ),
                                                       InkWell(
                                                         onTap: (){
-                                                          Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => JoinCircleIntro()));
+                                                          Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => const JoinCircleIntro()));
 
                                                         },
                                                         child: Column(
@@ -831,7 +831,7 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                               height: 50,
                                                               width: 50,
                                                               decoration: BoxDecoration(
-                                                                  gradient: LinearGradient(
+                                                                  gradient: const LinearGradient(
                                                                     begin: Alignment.topCenter,
                                                                     end: Alignment.bottomCenter,
                                                                     colors: [
@@ -841,11 +841,11 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                                   ),
                                                                   borderRadius: BorderRadius.circular(500)
                                                               ),
-                                                              child: Center(
+                                                              child: const Center(
                                                                 child: Icon(Icons.find_replace_rounded, color: Colors.white,),
                                                               ),
                                                             ),
-                                                            Text("Find Circle", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, shadows: [
+                                                            const Text("Find Circle", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, shadows: [
                                                               Shadow(
                                                                 offset: Offset(1.0, 1.0),
                                                                 blurRadius: 3.0,
@@ -862,7 +862,7 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
 
                                                       InkWell(
                                                         onTap: (){
-                                                          Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => EarnCreditIntro()));
+                                                          Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => const EarnCreditIntro()));
                                                         },
                                                         child: Column(
                                                           children: [
@@ -870,7 +870,7 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                               height: 50,
                                                               width: 50,
                                                               decoration: BoxDecoration(
-                                                                  gradient: LinearGradient(
+                                                                  gradient: const LinearGradient(
                                                                     begin: Alignment.topCenter,
                                                                     end: Alignment.bottomCenter,
                                                                     colors: [
@@ -880,11 +880,11 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                                   ),
                                                                   borderRadius: BorderRadius.circular(500)
                                                               ),
-                                                              child: Center(
+                                                              child: const Center(
                                                                 child: Icon(Icons.credit_score, color: Colors.white,),
                                                               ),
                                                             ),
-                                                            Text("Earn Credits", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, shadows: [
+                                                            const Text("Earn Credits", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, shadows: [
                                                               Shadow(
                                                                 offset: Offset(1.0, 1.0),
                                                                 blurRadius: 3.0,
@@ -894,7 +894,7 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                           ],
                                                         ),
                                                       ),
-                                                      SizedBox(
+                                                      const SizedBox(
                                                         width: 30,
                                                       ),
                                                     ],
@@ -904,7 +904,7 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                 ],
                                               ),
 
-                                              SizedBox(
+                                              const SizedBox(
                                                 height: 10,
                                               ),
 
@@ -921,7 +921,7 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                           height: 50,
                                                           width: 50,
                                                           decoration: BoxDecoration(
-                                                              gradient: LinearGradient(
+                                                              gradient: const LinearGradient(
                                                                 begin: Alignment.topCenter,
                                                                 end: Alignment.bottomCenter,
                                                                 colors: [
@@ -931,11 +931,11 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                                                               ),
                                                               borderRadius: BorderRadius.circular(500)
                                                           ),
-                                                          child: Center(
+                                                          child: const Center(
                                                             child: Icon(Icons.cloud_upload, color: Colors.white,),
                                                           ),
                                                         ),
-                                                        Text("Trade Up League", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, shadows: [
+                                                        const Text("Trade Up League", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, shadows: [
                                                           Shadow(
                                                             offset: Offset(1.0, 1.0),
                                                             blurRadius: 3.0,
@@ -967,7 +967,7 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                   barrierDismissible: true,
                   context: context,
                   builder: (BuildContext context){
-                    return Dialog(
+                    return const Dialog(
                         backgroundColor: Colors.transparent,
                         child: PopOutCard(subject: 'Error', message: "Failed to authenticate.", icon: Icons.downloading,)
 
@@ -984,7 +984,7 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
 
               Navigator.pushAndRemoveUntil(
                 context,
-                MaterialPageRoute(builder: (context) => SignInScreen()),
+                MaterialPageRoute(builder: (context) => const SignInScreen()),
                     (route) => false,
               );
 
@@ -1006,7 +1006,7 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
                 barrierDismissible: true,
                 context: context,
                 builder: (BuildContext context){
-                  return Dialog(
+                  return const Dialog(
                       backgroundColor: Colors.transparent,
                       child: PopOutCardError(subject: 'Error', message: "Failed to load.", icon: Icons.error,)
 
@@ -1020,7 +1020,7 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
           Future.delayed(const Duration(seconds: 2), () {
             Navigator.pushAndRemoveUntil(
               context,
-              MaterialPageRoute(builder: (context) => SignInScreen()),
+              MaterialPageRoute(builder: (context) => const SignInScreen()),
                   (route) => false,
             );
           });
@@ -1055,7 +1055,7 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
             _buildContainer(400 * _controller!.value),
             Align(
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 15),
+                padding: const EdgeInsets.symmetric(horizontal: 15),
                 height: 60,
                 child: Material(
                   color: Colors.transparent,
@@ -1090,6 +1090,7 @@ class _HomePageScreenState extends State<HomePageScreen> with SingleTickerProvid
 
   @override
   void dispose() {
+    _controller!.dispose();  // Make sure to dispose of the AnimationController
     super.dispose();
   }
 }
